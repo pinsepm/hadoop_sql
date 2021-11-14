@@ -16,3 +16,6 @@ WHERE
     type = 'Account Manager'
     OR type = 'Partner Manager'
   )
+-- JSON Conversion
+-- {"sql":"
+-- /*Front Line sellers*/"}
