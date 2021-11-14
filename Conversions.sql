@@ -24,3 +24,6 @@ GROUP BY
     WHEN user_country = 'US' THEN 'c_US_Conversions'
     ELSE 'c_INTL_Conversions'
   END
+-- JSON Conversion
+-- {"sql":"
+-- /*Standard Sheet*/"}
