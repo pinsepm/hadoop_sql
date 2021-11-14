@@ -38,3 +38,6 @@ FROM
 )
 GROUP BY adaptive_month, adaptive_level, rank_concentration
 ORDER BY adaptive_month, rank_concentration
+-- JSON Conversion
+-- {"sql":"
+-- /*Standard Sheet*/"}
