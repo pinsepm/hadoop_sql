@@ -362,3 +362,6 @@ GROUP BY
   
 )
 WHERE amount IS NOT NULL
+-- JSON Conversion
+-- {"sql":"
+-- /*	Sales Revenue by Adv State*/"}
