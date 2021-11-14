@@ -156,3 +156,6 @@ FROM
       adv_mapping.historical_sub_service_model_old,
       adv_mapping.historical_team_old
   )
+-- JSON Conversion
+-- {"sql":"
+-- /*Sales Metric Detail*/"}
