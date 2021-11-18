@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 SELECT
   adaptive_month as adaptive_month,
   adaptive_level as adaptive_level,
@@ -148,6 +150,5 @@ FROM
       adv_mapping.historical_sub_service_model_old,
       adv_mapping.historical_team_old
   )
--- JSON Conversion
--- {"sql":"
+-- For JSON Conversion
 -- /*Sales Metric Detail*/"}
