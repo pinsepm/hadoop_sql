@@ -1,3 +1,5 @@
+-- JSON Conversion
+-- {"sql":"
 SELECT
   adaptive_month,
   adaptive_level,
@@ -151,5 +153,4 @@ FROM
       historical_sales_country <> 'null'
   )
 -- JSON Conversion
--- {"sql":"
 -- /*Advertiser Detail*/"}
