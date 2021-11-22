@@ -150,9 +150,6 @@ FROM
     WHERE
       historical_sales_country <> 'null'
   )
---WHERE
---  channel <> 'Check'
---  AND sub_service <> 'Check'
 -- JSON Conversion
 -- {"sql":"
 -- /*Advertiser Detail*/"}
