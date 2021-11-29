@@ -80,7 +80,7 @@ FROM
       adv_mapping.historical_service_model_old,
       adv_mapping.historical_sub_service_model_old,
       adv_mapping.historical_team_old,
-      'Billable Revenue - Sales - Fixed' AS account,
+      'Sales_Metric_Detail_API.Billable_Rev_Sales_Fixed' AS account,
       SUM(revenue_fixed_fx_by_year) AS amount
     FROM
       salesfinance.northstar_adstats_advertiser adv_stat
@@ -125,7 +125,7 @@ FROM
       adv_mapping.historical_service_model_old,
       adv_mapping.historical_sub_service_model_old,
       adv_mapping.historical_team_old,
-      'Ad Impressions - Sales (Sandbox)' AS account,
+      'Sales_Metric_Detail_API.Ad_Impressions_Sales' AS account,
       SUM(ad_impressions) AS amount
     FROM
       salesfinance.northstar_adstats_advertiser adv_stat
