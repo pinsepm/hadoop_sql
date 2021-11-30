@@ -1,10 +1,9 @@
 SELECT
-  adaptive_month,
-  adaptive_level,
-  SUM(billable_rev_sales_geo_fixed) AS billable_rev_sales_geo_fixed,
-  rank_concentration
+  adaptive_month as adaptive_month,
+  adaptive_level as Level,
+  SUM(billable_rev_sales_geo_fixed) AS amount,
+  rank_concentration as Account
 FROM
-
 (
 SELECT
   adaptive_month,
@@ -16,9 +15,8 @@ SELECT
   ELSE 'Advertisers #501+' END AS rank_concentration
 FROM
   (
-    --Global
     SELECT
-      date(concat(CAST(year AS varchar),'-',CAST(quarter * 3 AS varchar),'-01')) AS adaptive_month,
+      date(concat(CAST(year AS string),'-',CAST(quarter * 3 AS string),'-01')) AS adaptive_month,
       'Total Pinterest' AS adaptive_level,
       advertiser_id,
       SUM(revenue_fixed_fx_by_year) AS billable_rev_sales_geo_fixed,
