@@ -1,16 +1,16 @@
 -- JSON Conversion
 -- {"sql":"
 SELECT
-  adaptive_month,
-  adaptive_level,
-  historical_sales_country,
-  historical_sub_service_model_old,
-  historical_service_model_old,
-  historical_team_old,
-  account,
-  advertiser_count,
-  channel,
-  sub_service
+  adaptive_month as adaptive_month,
+  adaptive_level as Level,
+  historical_sales_country as historical_sales_country,
+  historical_sub_service_model_old as historical_sub_service_model_old,
+  historical_service_model_old as historical_service_model_old,
+  historical_team_old as historical_team_old,
+  account as Account,
+  advertiser_count as amount,
+  channel as Sales_Channel,
+  sub_service as Sales_Sub0Service
 FROM
   (
     SELECT
@@ -50,7 +50,7 @@ FROM
       (
         --Annual
         SELECT
-          date(concat(CAST(bill.year AS varchar), '-12-01')) AS adaptive_month,
+          date(concat(CAST(bill.year AS string), '-12-01')) AS adaptive_month,
           'Total Pinterest' AS adaptive_level,
           adv_mapping.historical_channel,
           adv_mapping.historical_sector,
@@ -84,9 +84,9 @@ FROM
         SELECT
           date(
             concat(
-              CAST(a.year AS varchar),
+              CAST(a.year AS string),
               '-',
-              CAST(a.quarter * 3 AS varchar),
+              CAST(a.quarter * 3 AS string),
               '-01'
             )
           ) AS adaptive_month,
@@ -153,4 +153,4 @@ FROM
       historical_sales_country <> 'null'
   )
 -- JSON Conversion
--- /*Advertiser Detail*/"}
+-- /*Advertiser Detail (Archive)*/"}
