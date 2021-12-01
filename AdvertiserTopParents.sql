@@ -1,6 +1,5 @@
--- JSON Conversion
+-- For JSON Conversion
 -- {"sql":"
--- /*Standard Sheet*/"}
 SELECT
   adaptive_month,
   adaptive_level,
@@ -41,6 +40,5 @@ FROM
 )
 GROUP BY adaptive_month, adaptive_level, rank_concentration
 ORDER BY adaptive_month, rank_concentration
--- JSON Conversion
--- {"sql":"
+-- For JSON Conversion
 -- /*Standard Sheet*/"}
