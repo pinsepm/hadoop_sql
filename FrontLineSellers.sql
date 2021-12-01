@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 SELECT
   date as adaptive_month,
   cost_center as Level,
