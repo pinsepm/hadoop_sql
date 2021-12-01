@@ -1,4 +1,5 @@
---Pins Seen
+-- For JSON Conversion
+-- {"sql":"
 SELECT
   date(
     concat(
@@ -146,5 +147,4 @@ GROUP BY
   3,
   4
 -- JSON Conversion
--- {"sql":"
 -- /*Pins Activity*/"}

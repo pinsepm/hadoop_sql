@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 -- USER COUNTRY
 SELECT
   adaptive_month,
@@ -157,5 +159,4 @@ FROM
       adv_mapping.historical_team_old
   )
 -- JSON Conversion
--- {"sql":"
 -- /*Sales Metric Detail*/"}

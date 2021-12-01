@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 SELECT
   date as adaptive_month,
   cost_center as Level,
@@ -17,5 +19,4 @@ WHERE
     OR type = 'Partner Manager'
   )
 -- JSON Conversion
--- {"sql":"
 -- /*Front Line sellers*/"}
