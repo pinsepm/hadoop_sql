@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 SELECT * FROM (
 
 --Revenue LTM Current Period
