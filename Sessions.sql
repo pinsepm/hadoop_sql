@@ -30,5 +30,4 @@ GROUP BY
     )
   )
 -- JSON Conversion
--- {"sql":"
 --  /*Standard Sheet*/"}
