@@ -1,6 +1,3 @@
--- JSON Conversion
--- {"sql":"
--- /*Standard Sheet*/"}
 SELECT
   adaptive_month as adaptive_month,
   adaptive_level as Level,
