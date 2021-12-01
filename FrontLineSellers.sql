@@ -19,5 +19,4 @@ WHERE
     OR type = 'Partner Manager'
   )
 -- JSON Conversion
--- {"sql":"
 -- /*Front Line sellers*/"}
