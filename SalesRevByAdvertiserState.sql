@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 SELECT * FROM (
 
 --Revenue LTM Current Period
@@ -363,5 +365,4 @@ GROUP BY
 )
 WHERE amount IS NOT NULL
 -- JSON Conversion
--- {"sql":"
 -- /*	Sales Revenue by Adv State*/"}
