@@ -1,19 +1,18 @@
 -- For JSON Conversion
 -- {"sql":"
--- USER COUNTRY
 SELECT
-  adaptive_month,
-  adaptive_level,
-  user_country as country,
-  product,
-  product_group,
-  objective,
-  objective_group,
-  historical_service_model_old,
-  historical_sub_service_model_old,
-  historical_team_old,
-  account,
-  amount,
+  adaptive_month as adaptive_month,
+  adaptive_level as Level,
+  user_country as Location_User_Growth,
+  product as Sales_Product,
+  product_group as product_group,
+  objective as objective,
+  objective_group as objective_group,
+  historical_service_model_old as historical_service_model_old,
+  historical_sub_service_model_old as historical_sub_service_model_old,
+  historical_team_old as historical_team_old,
+  account as Account,
+  amount as amount,
   (
     CASE WHEN historical_channel LIKE '%Field' THEN 'Field'
          WHEN historical_channel LIKE '%Mid-Market' THEN 'Mid-Market'
@@ -22,20 +21,15 @@ SELECT
          WHEN historical_service_model_old = 'Growth'
             AND historical_sub_service_model_old = 'Growth - Managed'
             THEN 'Mid-Market'
-          /*mid-market*/ 
          WHEN historical_sub_service_model_old = 'Growth - SMB'
             AND (historical_team_old = 'Growth - Marketstar'
                 OR historical_team_old = 'Growth - Accenture')
             THEN 'SMB'
-          /*part of SMB, but it's just outsourced*/
          WHEN historical_sub_service_model_old = 'Growth - SMB'
             AND historical_team_old = 'Growth - Self Service' THEN 'SMB'
-          /*part of SMB, but it's just self-served*/
          ELSE 'Check'
-          /*this is just Tina's Check*/
-    END) AS channel,
+    END) AS Sales_Channel,
   (
-    --Tina's case statement from Q1'21
     CASE
       WHEN historical_channel LIKE '%Field'
       AND user_country <> 'US' THEN 'Managed'
@@ -68,9 +62,9 @@ FROM
     SELECT
       date(
         concat(
-          CAST(adv_stat.year AS varchar),
+          CAST(adv_stat.year AS string),
           '-',
-          CAST(adv_stat.month AS varchar),
+          CAST(adv_stat.month AS string),
           '-01'
         )
       ) AS adaptive_month,
@@ -95,7 +89,6 @@ FROM
       AND adv_stat.quarter = adv_mapping.quarter
     WHERE
       revenue_fixed_fx_by_year IS NOT NULL
-      --AND historical_service_model_old <> 'NA'
     GROUP BY
       adv_stat.year,
       adv_stat.month,
@@ -114,9 +107,9 @@ FROM
     SELECT
       date(
         concat(
-          CAST(adv_stat.year AS varchar),
+          CAST(adv_stat.year AS string),
           '-',
-          CAST(adv_stat.month AS varchar),
+          CAST(adv_stat.month AS string),
           '-01'
         )
       ) AS adaptive_month,
@@ -142,7 +135,6 @@ FROM
         AND adv_stat.quarter = adv_mapping.quarter
     WHERE
       ad_impressions IS NOT NULL
-      --AND historical_service_model_old <> 'NA'
     GROUP BY
       adv_stat.year,
       adv_stat.month,
