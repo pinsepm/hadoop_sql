@@ -2,9 +2,9 @@
 -- {"sql":"
 SELECT
   adaptive_month as adaptive_month,
-  adaptive_level as adaptive_level,
+  adaptive_level as Level,
   historical_sales_country as historical_sales_country,
-  product as product,
+  product as Sales_Product,
   product_group as product_group,
   objective as objective,
   objective_group as objective_group,
@@ -56,7 +56,7 @@ SELECT
       AND historical_team_old = 'Growth - Marketstar' THEN 'Managed'
       ELSE 'Self-Serve'
     END
-  ) AS sub_service
+  ) AS Sales_Sub0Service
 FROM
   ( 
     SELECT
