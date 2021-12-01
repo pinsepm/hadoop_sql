@@ -1,3 +1,5 @@
+-- For JSON Conversion
+-- {"sql":"
 SELECT
   date(
     concat(
@@ -28,5 +30,4 @@ GROUP BY
     )
   )
 -- JSON Conversion
--- {"sql":"
 --  /*Standard Sheet*/"}
