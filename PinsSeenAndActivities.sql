@@ -9,12 +9,12 @@ SELECT
       '-01'
     )
   ) AS adaptive_month,
-  'Total Pinterest' AS adaptive_level,
+  'Total Pinterest' AS Level,
   CASE
     WHEN country IS NULL
     OR country = '' THEN 'null'
     ELSE country
-  END AS user_country,
+  END AS Location_User_Growth,
   CASE
     WHEN viewtpe = 'HOME_FEED' THEN 'Home Feed'
     WHEN viewtpe = 'SEARCH_PINS' THEN 'Search'
@@ -23,8 +23,8 @@ SELECT
     WHEN viewtpe = 'BOARD_FEED' THEN 'Board Feed'
     WHEN viewtpe IN ('BOARD_IDEAS_FEED', 'BOARD_SECTION_IDEAS_FEED') THEN 'Board Ideas'
     ELSE 'Other Feeds'
-  END AS surface,
-  'PinsActivity.Pins_Seen' AS account,
+  END AS Surface,
+  'PinsActivity.Pins_Seen' AS Account,
   sum(impressions) AS amount
 FROM
   salesfinance.northstar_pins_seen_reporting
@@ -36,7 +36,6 @@ GROUP BY
   3,
   4
 UNION
-  -- Ad Impressions
 SELECT
   date(
     concat(
@@ -73,7 +72,6 @@ GROUP BY
   3,
   4
 UNION
-  -- Total Clicks
 SELECT
   date(
     concat(
@@ -110,7 +108,6 @@ GROUP BY
   3,
   4
 UNION
-  -- Total Repins
 SELECT
   date(
     concat(
