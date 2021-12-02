@@ -1,10 +1,8 @@
 -- For JSON Conversion
 -- {"sql":"
 SELECT * FROM (
-
---Revenue LTM Current Period
 SELECT
-  date(concat(cast(new.year as varchar),'-',cast(new.quarter * 3 as varchar),'-01')) as adaptive_month,
+  date(concat(cast(new.year as string),'-',cast(new.quarter * 3 as string),'-01')) as adaptive_month,
   'Total Pinterest' as Level,
   new.YY_ACCOUNT_ADV_STATE AS Advertiser_State,
   previous_quarter_sales_country as Location_User_Growth,
@@ -61,19 +59,16 @@ FROM
   ) adv ON new.g_advertiser_id = adv.g_advertiser_id
 GROUP BY
   1, 2, 3, 4, 5, 6, 7
-  
 UNION
-
---Revenue LTM Previous Period
 SELECT
-  date(concat(cast(new.year as varchar),'-',cast(new.quarter * 3 as varchar),'-01')) as adaptive_month,
-  'Total Pinterest' as adaptive_level,
-  new.YY_ACCOUNT_ADV_STATE AS adv_state,
-  previous_quarter_sales_country,
-  previous_quarter_service_model,
-  previous_quarter_sub_service_model,
-  previous_quarter_sub_sector,
-  'Sales_Rev_State.Revenue_LTM_Previous' AS account,
+  date(concat(cast(new.year as string),'-',cast(new.quarter * 3 as string),'-01')) as adaptive_month,
+  'Total Pinterest' as Level,
+  new.YY_ACCOUNT_ADV_STATE AS Advertiser_State,
+  previous_quarter_sales_country as Location_User_Growth,
+  previous_quarter_service_model as Sales_Channel,
+  previous_quarter_sub_service_model as Sales_Sub0Service,
+  previous_quarter_sub_sector as Sales_Sub0Sector,
+  'Sales_Rev_State.Revenue_LTM_Previous' AS Account,
   sum(new.revenue_ltm_previous_period) AS amount
 FROM
   (
@@ -125,17 +120,15 @@ GROUP BY
   1, 2, 3, 4, 5, 6, 7
   
 UNION
-
---Revenue Annual
 SELECT
-  date(concat(cast(a.year as varchar),'-12-01')) as adaptive_month,
-  'Total Pinterest' as adaptive_level,
-  a.ACCOUNT_ADV_STATE AS account_adv_state,
-  a.previous_quarter_sales_country AS previous_quarter_sales_country,
-  a.previous_quarter_service_model AS previous_quarter_service_model,
-  a.previous_quarter_sub_service_model AS previous_quarter_sub_service_model,
-  a.previous_quarter_sub_sector as previous_quarter_sub_sector, 
-  'Sales_Rev_State.Revenue_Annual' AS account,
+  date(concat(cast(a.year as string),'-12-01')) as adaptive_month,
+  'Total Pinterest' as Level,
+  a.ACCOUNT_ADV_STATE AS Advertiser_State,
+  a.previous_quarter_sales_country AS Location_User_Growth,
+  a.previous_quarter_service_model AS Sales_Channel,
+  a.previous_quarter_sub_service_model AS Sales_Sub0Service,
+  a.previous_quarter_sub_sector as Sales_Sub0Sector, 
+  'Sales_Rev_State.Revenue_Annual' AS Account,
   SUM(a.revenue) AS amount
 FROM
   (
@@ -170,17 +163,15 @@ GROUP BY
   1, 2, 3, 4, 5, 6, 7
   
 UNION
-
---Revenue Last Year Annual
 SELECT
-  date(concat(cast(a.year as varchar),'-12-01')) as adaptive_month,
-  'Total Pinterest' as adaptive_level,
-  a.ACCOUNT_ADV_STATE AS account_adv_state,
-  a.previous_quarter_sales_country AS previous_quarter_sales_country,
-  a.previous_quarter_service_model AS previous_quarter_service_model,
-  a.previous_quarter_sub_service_model AS previous_quarter_sub_service_model,
-  a.previous_quarter_sub_sector as previous_quarter_sub_sector, 
-  'Sales_Rev_State.Revenue_LY_Annual' AS account,
+  date(concat(cast(a.year as string),'-12-01')) as adaptive_month,
+  'Total Pinterest' as Level,
+  a.ACCOUNT_ADV_STATE AS Advertiser_State,
+  a.previous_quarter_sales_country AS Location_User_Growth,
+  a.previous_quarter_service_model AS Sales_Channel,
+  a.previous_quarter_sub_service_model AS Sales_Sub0Service,
+  a.previous_quarter_sub_sector as Sales_Sub0Sector, 
+  'Sales_Rev_State.Revenue_LY_Annual' AS Account,
   SUM(a.revenue_ly) AS amount
 FROM
   (
@@ -215,17 +206,15 @@ GROUP BY
   1, 2, 3, 4, 5, 6, 7
   
 UNION
-
---Revenue Quarter
 SELECT
-  date(concat(cast(main.year as varchar),'-',cast(main.quarter * 3 as varchar),'-01')) as adaptive_month,
-  'Total Pinterest' as adaptive_level,
-  new.YY_ACCOUNT_ADV_STATE AS table_adv_state,
-  previous_quarter_sales_country,
-  previous_quarter_service_model,
-  previous_quarter_sub_service_model,
-  previous_quarter_sub_sector,
-  'Sales_Rev_State.Revenue_Quarter' AS account,
+  date(concat(cast(main.year as string),'-',cast(main.quarter * 3 as string),'-01')) as adaptive_month,
+  'Total Pinterest' as Level,
+  new.YY_ACCOUNT_ADV_STATE AS Advertiser_State,
+  previous_quarter_sales_country as Location_User_Growth,
+  previous_quarter_service_model as Sales_Channel,
+  previous_quarter_sub_service_model as Sales_Sub0Service,
+  previous_quarter_sub_sector as Sales_Sub0Sector,
+  'Sales_Rev_State.Revenue_Quarter' AS Account,
   sum(new.revenue) AS amount
 FROM
   (
@@ -287,19 +276,16 @@ FROM
   ) adv ON main.g_advertiser_id = adv.g_advertiser_id
 GROUP BY
   1, 2, 3, 4, 5, 6, 7
-  
 UNION
-
---Revenue Last Year Quarter 
 SELECT
-  date(concat(cast(main.year as varchar),'-',cast(main.quarter * 3 as varchar),'-01')) as adaptive_month,
-  'Total Pinterest' as adaptive_level,
-  new.YY_ACCOUNT_ADV_STATE AS table_adv_state,
-  previous_quarter_sales_country,
-  previous_quarter_service_model,
-  previous_quarter_sub_service_model,
-  previous_quarter_sub_sector,
-  'Sales_Rev_State.Revenue_LY_Quarter' AS account,
+  date(concat(cast(main.year as string),'-',cast(main.quarter * 3 as string),'-01')) as adaptive_month,
+  'Total Pinterest' as Level,
+  new.YY_ACCOUNT_ADV_STATE AS Advertiser_State,
+  previous_quarter_sales_country as Location_User_Growth,
+  previous_quarter_service_model as Sales_Channel,
+  previous_quarter_sub_service_model as Sales_Sub0Service,
+  previous_quarter_sub_sector as Sales_Sub0Sector,
+  'Sales_Rev_State.Revenue_LY_Quarter' AS Account,
   sum(new.revenue_ly) AS amount
 FROM
   (
