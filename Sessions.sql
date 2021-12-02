@@ -9,11 +9,9 @@ SELECT
       '-01'
     )
   ) AS adaptive_month,
-  'Total Pinterest' AS adaptive_level,
-  --country,
-  --'c_Session_Count' AS account,
-  CASE WHEN country = 'US' THEN 'c_US_Sessions' ELSE 'c_INTL_Sessions' END AS account,
-  COUNT(unified_session_id) AS session_count
+  'Total Pinterest' AS Level,
+  CASE WHEN country = 'US' THEN 'c_US_Sessions' ELSE 'c_INTL_Sessions' END AS Account,
+  COUNT(unified_session_id) AS amount
 FROM
   data.attributed_sessions_base
 WHERE
