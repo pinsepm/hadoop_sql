@@ -4,7 +4,7 @@ SELECT
   date as adaptive_month,
   cost_center as Level,
   sales_country AS Location_User_Growth,
-  SUBSTRING(channel, STRPOS(channel, ' ')+1) as Sales_Channel,
+  SUBSTRING(channel, POSITION(channel, ' ')+1) as Sales_Channel,
   type AS Seller_Type,
   'FrontLine.Count' AS Account,
   raw_count as amount
