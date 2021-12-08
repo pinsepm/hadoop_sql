@@ -1,3 +1,4 @@
+-- Test comment
 -- For JSON Conversion
 -- {"sql":"
 SELECT
