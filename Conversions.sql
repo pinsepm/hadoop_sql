@@ -14,7 +14,7 @@ SELECT
     WHEN user_country = 'US' THEN 'c_US_Conversions'
     ELSE 'c_INTL_Conversions'
   END AS Account,
-  sum(conversions_checkouts_771) AS conversion_count
+  sum(conversions_checkouts_771) AS amount
 FROM
   Finops.conversion_metrics
 WHERE
