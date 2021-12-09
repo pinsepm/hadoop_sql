@@ -13,7 +13,7 @@ SELECT
   CASE
     WHEN user_country = 'US' THEN 'c_US_Conversions'
     ELSE 'c_INTL_Conversions'
-  END AS account,
+  END AS Account,
   sum(conversions_checkouts_771) AS conversion_count
 FROM
   Finops.conversion_metrics
