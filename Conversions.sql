@@ -1,11 +1,22 @@
 -- For JSON Conversion
 -- {"sql":"
 SELECT
+  adaptive_month,
+  Level,
+  Account,
+  amount
+FROM
+  epm.conversions
+-- JSON Conversion
+-- /*Standard Sheet*/"}
+
+-- SQL to create table
+SELECT
   date(
     concat(
-      CAST(year AS string),
+      CAST(year AS varchar),
       '-',
-      CAST(month AS string),
+      CAST(month AS varchar),
       '-01'
     )
   ) AS adaptive_month,
@@ -14,7 +25,8 @@ SELECT
     WHEN user_country = 'US' THEN 'c_US_Conversions'
     ELSE 'c_INTL_Conversions'
   END AS Account,
-  sum(conversions_checkouts_771) AS amount
+  sum(conversions_checkouts_771) AS amount,
+  1 as placeholder
 FROM
   Finops.conversion_metrics
 WHERE
@@ -26,5 +38,3 @@ GROUP BY
     WHEN user_country = 'US' THEN 'c_US_Conversions'
     ELSE 'c_INTL_Conversions'
   END
--- JSON Conversion
--- /*Standard Sheet*/"}
