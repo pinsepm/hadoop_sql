@@ -1,5 +1,21 @@
 -- For JSON Conversion
 -- {"sql":"
+SELECT
+  adaptive_month,
+  Level,
+  Advertiser_State,
+  Location_User_Growth,
+  Sales_Channel,
+  Sales_Sub0Service,
+  Sales_Sub0Sector,
+  Account,
+  amount
+FROM
+  epm.SalesbyState
+-- JSON Conversion
+-- /*	Sales Revenue by Adv State*/"}
+
+-- SQL to create table
 SELECT * FROM (
 SELECT
   date(concat(cast(new.year as string),'-',cast(new.quarter * 3 as string),'-01')) as adaptive_month,
@@ -350,5 +366,3 @@ GROUP BY
   
 )
 WHERE amount IS NOT NULL
--- JSON Conversion
--- /*	Sales Revenue by Adv State*/"}
