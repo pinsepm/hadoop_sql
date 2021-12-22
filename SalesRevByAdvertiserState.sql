@@ -15,6 +15,8 @@ FROM
 -- JSON Conversion
 -- /*	Sales Revenue by Adv State*/"}
 
+-- DataHub schedule
+-- https://querybook.pinadmin.com/data/datadoc/179823/salesbystate-table/
 -- SQL to create table
 SELECT * FROM (
 SELECT
