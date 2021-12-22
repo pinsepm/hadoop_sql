@@ -10,6 +10,8 @@ FROM
 -- JSON Conversion
 -- /*Standard Sheet*/"}
 
+-- DataHub schedule
+-- https://querybook.pinadmin.com/data/datadoc/179821/conversions-table/
 -- SQL to create table
 SELECT
   date(
