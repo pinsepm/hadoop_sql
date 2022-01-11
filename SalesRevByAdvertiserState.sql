@@ -13,7 +13,7 @@ SELECT
 FROM
   epm.SalesbyState
 -- JSON Conversion
--- /*	Sales Revenue by Adv State*/"}
+-- /*Sales Revenue by Adv State (Archive)*/"}
 
 -- DataHub schedule
 -- https://querybook.pinadmin.com/data/datadoc/179823/salesbystate-table/
