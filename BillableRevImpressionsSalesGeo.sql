@@ -151,4 +151,4 @@ FROM
       adv_mapping.historical_team_old
   )
 -- For JSON Conversion
--- /*Sales Metric Detail*/"}
+-- /*Sales Metric Detail (Archive)*/"}
