@@ -10,7 +10,7 @@ SELECT
       '-01'
     )
   ) AS adaptive_month,
-  cost_center_number AS LEVEL,
+  cost_center_number AS Level,
   historical_sales_country AS Location_User_Growth,
   SUBSTRING(
     historical_channel_edited,
