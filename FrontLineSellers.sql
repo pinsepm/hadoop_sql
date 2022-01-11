@@ -29,4 +29,4 @@ WHERE
     OR job_type_2 = 'Partner Manager'
   )
 -- JSON Conversion
--- /*Front Line sellers*/"}
+-- /*Front Line sellers (Archive)*/"}
