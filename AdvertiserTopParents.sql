@@ -11,10 +11,10 @@ SELECT
   adaptive_month,
   adaptive_level,
   billable_rev_sales_geo_fixed,
-  CASE WHEN revenue_rank <= 10 THEN 'c_Top_10_Advert_Pct_Rev'
-  WHEN revenue_rank <= 100 THEN 'c_11_100_Advert_Pct_Rev'
-  WHEN revenue_rank <= 500 THEN 'c_101_500_Advert_Pct_Rev'
-  ELSE 'c_501_Plus_Advert_Pct_Rev' END AS rank_concentration
+  CASE WHEN revenue_rank <= 10 THEN 'c_Top_10_Advertisers'
+  WHEN revenue_rank <= 100 THEN 'c_11_100_Advertisers'
+  WHEN revenue_rank <= 500 THEN 'c_101_500_Advertisers'
+  ELSE 'c_501_Plus_Advertisers' END AS rank_concentration
 FROM
   (
     SELECT
