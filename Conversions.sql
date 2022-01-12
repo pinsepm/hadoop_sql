@@ -1,5 +1,6 @@
 -- For JSON Conversion
 -- {"sql":"
+SET hive.mapred.mode=nonstrict;
 SELECT
   adaptive_month,
   Level,
