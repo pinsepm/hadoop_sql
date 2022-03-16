@@ -50,7 +50,7 @@ FROM
       (
         --Annual
         SELECT
-          date(concat(CAST(bill.year AS string), '-12-01')) AS adaptive_month,
+          date(concat(CAST(bill.year AS varchar), '-12-01')) AS adaptive_month,
           'Total Pinterest' AS adaptive_level,
           adv_mapping.historical_channel,
           adv_mapping.historical_sector,
@@ -84,9 +84,9 @@ FROM
         SELECT
           date(
             concat(
-              CAST(a.year AS string),
+              CAST(a.year AS varchar),
               '-',
-              CAST(a.quarter * 3 AS string),
+              CAST(a.quarter * 3 AS varchar),
               '-01'
             )
           ) AS adaptive_month,
