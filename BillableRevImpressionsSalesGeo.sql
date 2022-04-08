@@ -62,9 +62,9 @@ FROM
     SELECT
       date(
         concat(
-          CAST(adv_stat.year AS string),
+          CAST(adv_stat.year AS varchar),
           '-',
-          CAST(adv_stat.month AS string),
+          CAST(adv_stat.month AS varchar),
           '-01'
         )
       ) AS adaptive_month,
@@ -107,9 +107,9 @@ FROM
     SELECT
       date(
         concat(
-          CAST(adv_stat.year AS string),
+          CAST(adv_stat.year AS varchar),
           '-',
-          CAST(adv_stat.month AS string),
+          CAST(adv_stat.month AS varchar),
           '-01'
         )
       ) AS adaptive_month,
