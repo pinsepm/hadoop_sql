@@ -3,9 +3,9 @@
 SELECT
   date(
     concat(
-      CAST(year AS STRING),
+      CAST(year AS varchar),
       '-',
-      CAST(month AS STRING),
+      CAST(month AS varchar),
       '-01'
     )
   ) AS adaptive_month,
@@ -39,9 +39,9 @@ UNION
 SELECT
   date(
     concat(
-      CAST(year AS STRING),
+      CAST(year AS varchar),
       '-',
-      CAST(month AS STRING),
+      CAST(month AS varchar),
       '-01'
     )
   ) AS adaptive_month,
@@ -75,9 +75,9 @@ UNION
 SELECT
   date(
     concat(
-      CAST(year AS STRING),
+      CAST(year AS varchar),
       '-',
-      CAST(month AS STRING),
+      CAST(month AS varchar),
       '-01'
     )
   ) AS adaptive_month,
@@ -111,9 +111,9 @@ UNION
 SELECT
   date(
     concat(
-      CAST(year AS STRING),
+      CAST(year AS varchar),
       '-',
-      CAST(month AS STRING),
+      CAST(month AS varchar),
       '-01'
     )
   ) AS adaptive_month,
