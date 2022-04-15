@@ -1,12 +1,12 @@
 -- For JSON Conversion
 -- {"sql":"
-SET hive.mapred.mode=nonstrict;
+-- SET hive.mapred.mode=nonstrict;
 SELECT
   DATE(
     concat(
-      CAST(YEAR AS string),
+      CAST(YEAR AS varchar),
       '-',
-      CAST(MONTH AS string),
+      CAST(MONTH AS varchar),
       '-01'
     )
   ) AS adaptive_month,
@@ -14,7 +14,7 @@ SELECT
   historical_sales_country AS Location_User_Growth,
   SUBSTRING(
     historical_channel_edited,
-    POSITION(historical_channel_edited, ' ') + 1
+    strpos(historical_channel_edited, ' ') + 1
   ) AS Sales_Channel,
   job_type_2 AS Seller_Type,
   'FrontLine.Count' AS Account,
