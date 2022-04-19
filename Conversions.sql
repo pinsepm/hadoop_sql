@@ -11,9 +11,11 @@ SELECT
   ) AS adaptive_month,
   'Total Pinterest' AS Level,
   CASE
-    WHEN user_country = 'US' THEN 'c_US_Conversions'
-    ELSE 'c_INTL_Conversions'
-  END AS Account,
+    WHEN user_country = 'US' THEN 'US'
+    ELSE user_country
+  END
+  AS user_country,
+  'c_Conversions' AS Account,
   sum(conversions_checkouts_771) AS amount
 FROM
   Finops.conversion_metrics
@@ -23,8 +25,8 @@ GROUP BY
   year,
   month,
   CASE
-    WHEN user_country = 'US' THEN 'c_US_Conversions'
-    ELSE 'c_INTL_Conversions'
+    WHEN user_country = 'US' THEN 'US'
+    ELSE user_country
   END
 -- JSON Conversion
 -- /*Standard Sheet*/"}
